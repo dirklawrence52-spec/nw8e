@@ -1,80 +1,79 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-    }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .play-btn {
-      background: transparent;
-      color: white;
-      border: 3px solid white;
-      border-radius: 10px;
-      padding: 16px 38px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-      letter-spacing: 1px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: 0.2s;
-    }
+.play-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
 
-    .play-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-  </style>
+.play-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+</style>
 </head>
 
 <body>
 
-  <audio id="myAudio">
-    <source src="Blue%20Boy.mp3" type="audio/mpeg">
-  </audio>
+<audio id="myAudio">
+  <source src="Blue%20Boy.mp3" type="audio/mpeg">
+</audio>
 
-  <button class="play-btn" onclick="togglePlay()">
-    <span id="playIcon">▶</span>
-    <span id="btnText">PLAY MUSIC</span>
-  </button>
+<button class="play-btn" onclick="togglePlay()">
+  <span id="playIcon">►</span>
+  <span id="btnText">PLAY MUSIC</span>
+</button>
 
-  <script>
-    const audio = document.getElementById("myAudio");
-    const playIcon = document.getElementById("playIcon");
-    const btnText = document.getElementById("btnText");
+<script>
+const audio = document.getElementById("myAudio");
+const playIcon = document.getElementById("playIcon");
+const btnText = document.getElementById("btnText");
 
-    function togglePlay() {
-      if (audio.paused) {
-        audio.play();
-        playIcon.textContent = "❚❚";
-        btnText.textContent = "PAUSE MUSIC";
-      } else {
-        audio.pause();
-        playIcon.textContent = "▶";
-        btnText.textContent = "PLAY MUSIC";
-      }
-    }
-
-    audio.addEventListener("ended", function() {
-      playIcon.textContent = "▶";
-      btnText.textContent = "PLAY MUSIC";
-    });
-  </script>
+function togglePlay() {
+  if (audio.paused) {
+    audio.play();
+    playIcon.innerText = "❚❚";
+    btnText.innerText = "PAUSE MUSIC";
+  } else {
+    audio.pause();
+    playIcon.innerText = "►";
+    btnText.innerText = "PLAY MUSIC";
+  }
+}
+</script>
 
 </body>
 </html>
